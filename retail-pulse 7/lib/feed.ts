@@ -1,3 +1,4 @@
+import { Prisma } from "@prisma/client";
 import { prisma } from "./prisma";
 
 type FeedParams = {
@@ -21,7 +22,7 @@ export async function getFeed(params: FeedParams) {
     where: {
       publishedAt: { gte: since },
       source: { worldview: params.worldview },
-      enrichment: { not: null }
+      enrichment: { not: Prisma.DbNull }
     },
     include: { source: true },
     orderBy: { publishedAt: "desc" },
