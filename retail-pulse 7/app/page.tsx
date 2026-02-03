@@ -3,6 +3,8 @@ import FilterSidebar from "../components/FilterSidebar";
 import Feed from "../components/Feed";
 import TopBar from "../components/TopBar";
 
+export const dynamic = "force-dynamic";
+
 export default function HomePage() {
   return (
     <div className="min-h-screen">
