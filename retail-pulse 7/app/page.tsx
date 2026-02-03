@@ -10,7 +10,9 @@ export default function HomePage() {
       <main className="mx-auto max-w-7xl px-4 pb-10 pt-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-[280px_1fr]">
           <aside className="surface p-4">
-            <FilterSidebar />
+                          <Suspense fallback={<div>Loading filters...</div>}>
+                                          <FilterSidebar />
+                                                        </Suspense>
           </aside>
           <section className="surface p-4">
             <Suspense fallback={<div>Loading feed…</div>}>
