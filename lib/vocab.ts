@@ -1,4 +1,4 @@
-lib/vocab.tsexport const WORLDVIEWS = ["uk", "europe", "north_america", "global"] as const;
+export const WORLDVIEWS = ["uk", "europe", "north_america", "global"] as const;
 export type Worldview = typeof WORLDVIEWS[number];
 
 export const SEGMENTS = [
