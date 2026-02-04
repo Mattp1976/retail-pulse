@@ -31,7 +31,7 @@ export async function getFeed(params: FeedParams) {
 
   const filtered = rows.filter((a) => {
         const e: any = a.enrichment;
-        if (!e) return false;
+        // if (!e) return false; // Allow non-enriched articles
 
                                    const searchText = (a.title + " " + (a.snippet ?? "")).toLowerCase();
         if (params.search && !searchText.includes(params.search.toLowerCase())) return false;
