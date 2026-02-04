@@ -39,7 +39,7 @@ export default function Feed() {
   }, [params]);
 
   if (loading) return <div>Loading feed...</div>;
-      if (error) return <div>{error};
+      if (error) return <div>{error}</div>;
     
       const sinceHours = Number(params.get("sinceHours") ?? "24");
       const sinceLabel = sinceHours === 24 ? "Last 24h" : sinceHours === 168 ? "Last 7d" : "Last 30d";
