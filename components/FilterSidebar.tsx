@@ -179,4 +179,4 @@ function FilterGroup({
                 </div>
           </div>
         );
-}</div>
+}
