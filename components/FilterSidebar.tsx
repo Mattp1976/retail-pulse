@@ -56,11 +56,11 @@ export default function FilterSidebar() {
   return (
         <div className="space-y-3 text-sm">
               <div className="flex items-center justify-between">
-                      <h2 className="text-sm font-semibold text-ink">Filters</h2>h2>
-                      <button onClick={clearFilters} className="text-xs text-slate underline">Clear</button>button>
-              </div>div>
+                      <h2 className="text-sm font-semibold text-ink">Filters</h2>
+                      <button onClick={clearFilters} className="text-xs text-slate underline">Clear</button>
+              </div>
               <div>
-                      <label className="text-[11px] font-semibold uppercase tracking-wide text-slate">Search</label>label>
+                      <label className="text-[11px] font-semibold uppercase tracking-wide text-slate">Search</label>
                       <input
                                   value={search}
                                   onChange={(e) => setSearch(e.target.value)}
@@ -68,10 +68,10 @@ export default function FilterSidebar() {
                                   placeholder="Headline or snippet"
                                   className="mt-1 w-full rounded-xl border border-line bg-white/90 px-3 py-2 text-[13px] outline-none focus:ring-2 focus:ring-accent/30"
                                 />
-              </div>div>
+              </div>
         
               <div>
-                      <label className="text-[11px] font-semibold uppercase tracking-wide text-slate">Time range</label>label>
+                      <label className="text-[11px] font-semibold uppercase tracking-wide text-slate">Time range</label>
                       <Segmented
                                   value={params.get("sinceHours") ?? "24"}
                                   options={[
@@ -81,10 +81,10 @@ export default function FilterSidebar() {
                                               ]}
                                   onChange={(value) => setParam("sinceHours", value)}
                                 />
-              </div>div>
+              </div>
         
               <div>
-                      <label className="text-[11px] font-semibold uppercase tracking-wide text-slate">Sort</label>label>
+                      <label className="text-[11px] font-semibold uppercase tracking-wide text-slate">Sort</label>
                       <Segmented
                                   value={params.get("sort") ?? "impact"}
                                   options={[
@@ -93,10 +93,10 @@ export default function FilterSidebar() {
                                               ]}
                                   onChange={(value) => setParam("sort", value)}
                                 />
-              </div>div>
+              </div>
         
               <div>
-                      <label className="text-[11px] font-semibold uppercase tracking-wide text-slate">Min impact</label>label>
+                      <label className="text-[11px] font-semibold uppercase tracking-wide text-slate">Min impact</label>
                       <Segmented
                                   value={params.get("minImpact") ?? "0"}
                                   options={[
@@ -107,7 +107,7 @@ export default function FilterSidebar() {
                                               ]}
                                   onChange={(value) => setParam("minImpact", value)}
                                 />
-              </div>div>
+              </div>
         
               <div className="h-px bg-line/70" />
         
@@ -116,8 +116,8 @@ export default function FilterSidebar() {
               <FilterGroup title="Operational themes" items={OPERATIONAL_THEMES as unknown as string[]} selected={selections.operational_themes} onToggle={(v) => toggle("operational_themes", v)} />
               <FilterGroup title="Impact areas" items={IMPACT_AREAS as unknown as string[]} selected={selections.impact_areas} onToggle={(v) => toggle("impact_areas", v)} />
               <FilterGroup title="Geography" items={GEOGRAPHY as unknown as string[]} selected={selections.geography} onToggle={(v) => toggle("geography", v)} />
-              <p className="text-[11px] text-slate">If not set, geography defaults to the worldview.</p>p>
-        </div>div>
+              <p className="text-[11px] text-slate">If not set, geography defaults to the worldview.</p>
+        </div>
       );
 }
 
@@ -140,9 +140,9 @@ function Segmented({
                                 className={clsx(value === opt.value && "active")}
                               >
                       {opt.label}
-                    </button>button>
+                    </button>
                   ))}
-          </div>div>
+          </div>
         );
 }
 
@@ -159,7 +159,7 @@ function FilterGroup({
 }) {
     return (
           <div>
-                <p className="text-[11px] font-semibold uppercase tracking-wide text-slate">{title}</p>p>
+                <p className="text-[11px] font-semibold uppercase tracking-wide text-slate">{title}</p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
                   {items.map((x) => {
                       const active = selected.includes(x);
@@ -173,10 +173,10 @@ function FilterGroup({
                                                                     )}
                                                   >
                                       {x.replace(/_/g, " ")}
-                                    </button>button>
+                                    </button>
                                   );
           })}
-                </div>div>
-          </div>div>
+                </div>
+          </div>
         );
 }</div>
