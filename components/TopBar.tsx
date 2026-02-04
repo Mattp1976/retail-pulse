@@ -45,4 +45,4 @@ export default function TopBar() {
               </div>
         </header>
       );
-}</header>
+}
