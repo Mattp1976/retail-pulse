@@ -38,8 +38,8 @@ export default function Feed() {
         load();
   }, [params]);
 
-  if (loading) return <div>Loading feed…</div>div>;
-    if (error) return <div>{error}</div>div>;
+  if (loading) return <div>Loading feed…</div>;
+    if (error) return <div>{error}</div>;
   
     const sinceHours = Number(params.get("sinceHours") ?? "24");
     const sinceLabel = sinceHours === 24 ? "Last 24h" : sinceHours === 168 ? "Last 7d" : "Last 30d";
@@ -49,10 +49,10 @@ export default function Feed() {
           <div className="space-y-4">
                 <div className="panel flex flex-wrap items-center justify-between gap-3 px-3 py-2 text-[11px] text-slate">
                         <div className="flex flex-wrap items-center gap-2">
-                                  <span className="chip">{worldview.replace("_", " ")}</span>span>
-                                  <span className="chip">{sinceLabel}</span>span>
-                                  <span className="chip">{sortLabel}</span>span>
-                                  <span className="chip-strong">Stories: {items.length}</span>span>
+                                  <span className="chip">{worldview.replace("_", " ")}</span>
+                                  <span className="chip">{sinceLabel}</span>
+                                  <span className="chip">{sortLabel}</span>
+                                  <span className="chip-strong">Stories: {items.length}</span>
                         </div>div>
                         <RefreshButton worldview={worldview} />
                 </div>div>
@@ -76,7 +76,7 @@ function RefreshButton({ worldview }: { worldview: string }) {
     const ingestToken = process.env.NEXT_PUBLIC_INGEST_TOKEN ?? "";
   
     if (!ingestToken) {
-          return <span className="text-[11px] text-slate">Ingestion disabled</span>span>;
+          return <span className="text-[11px] text-slate">Ingestion disabled</span>;
     }
   
     async function run() {
@@ -109,7 +109,7 @@ function RefreshButton({ worldview }: { worldview: string }) {
                         >
                   {busy ? "Refreshing…" : "Refresh ingestion"}
                 </button>button>
-            {msg ? <span className="text-xs text-slate">{msg}</span>span> : null}
+            {msg ? <span className="text-xs text-slate">{msg}</span> : null}
           </div>div>
         );
 }</div>
