@@ -19,30 +19,30 @@ export default function TopBar() {
         <header className="glass sticky top-0 z-20">
               <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
                       <div>
-                                <h1 className="font-display text-xl tracking-tight">Retail Pulse</h1>h1>
-                                <p className="text-[11px] text-slate">Operator-facing news and signals</p>p>
-                      </div>div>
+                                <h1 className="font-display text-xl tracking-tight">Retail Pulse</h1>
+                                <p className="text-[11px] text-slate">Operator-facing news and signals</p>
+                      </div>
                       <div className="flex items-center gap-4">
                                 <Link
                                               href="/sources"
                                               className="rounded-full border border-line bg-white/70 px-3 py-1 text-[11px] text-slate hover:text-ink"
                                             >
                                             Sources
-                                </Link>Link>
+                                </Link>
                                 <div className="flex items-center gap-2">
-                                            <label className="text-[11px] uppercase tracking-wide text-slate">Worldview</label>label>
+                                            <label className="text-[11px] uppercase tracking-wide text-slate">Worldview</label>
                                             <select
                                                             value={worldview}
                                                             onChange={(e) => setWorldview(e.target.value)}
                                                             className="rounded-full border border-line bg-white/70 px-3 py-1 text-[11px]"
                                                           >
                                               {WORLDVIEWS.map((w) => (
-                                                                            <option key={w} value={w}>{w.replace("_", " ")}</option>option>
+                                                                            <option key={w} value={w}>{w.replace("_", " ")}</option>
                                                                           ))}
-                                            </select>select>
-                                </div>div>
-                      </div>div>
-              </div>div>
-        </header>header>
+                                            </select>
+                                </div>
+                      </div>
+              </div>
+        </header>
       );
 }</header>
