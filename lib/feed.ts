@@ -21,7 +21,7 @@ export async function getFeed(params: FeedParams) {
   const rows = await prisma.article.findMany({
         where: {
                 publishedAt: { gte: since },
-                source: { worldview: params.worldview },
+                // source: { worldview: params.worldview }, // Disabled to show all sources
                 // enrichment: { not: Prisma.DbNull } // Commented out to show non-enriched articles
         },
         include: { source: true },
