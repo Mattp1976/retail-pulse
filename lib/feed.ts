@@ -22,7 +22,7 @@ export async function getFeed(params: FeedParams) {
         where: {
                 publishedAt: { gte: since },
                 source: { worldview: params.worldview },
-                enrichment: { not: Prisma.DbNull }
+                // enrichment: { not: Prisma.DbNull } // Commented out to show non-enriched articles
         },
         include: { source: true },
         orderBy: { publishedAt: "desc" },
